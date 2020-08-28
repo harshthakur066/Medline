@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:medline/pages/doctor/dlogin.dart';
 
 class DoctorSignupScreen extends StatefulWidget {
@@ -152,6 +153,7 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
         //height: phoneHeight,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
+
           child: Align(
             child: SingleChildScrollView(
               child: Column(
@@ -159,11 +161,13 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
+
                     'Details',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+
                     ),
                   ),
                   SizedBox(height: 10),
@@ -224,8 +228,10 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
                               ),
                               borderRadius: BorderRadius.circular(50),
                             ),
+
                           ),
                         ),
+
                         SizedBox(height: 10),
                         TextField(
                           //obscureText: obscureText,
@@ -274,6 +280,7 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
                                 color: Colors.grey[400],
                               ),
                               borderRadius: BorderRadius.circular(50),
+
                             ),
                           ),
                         ),
@@ -294,7 +301,9 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
                         GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
+
                                 builder: (context) => DoctorLoginScreen()));
+
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

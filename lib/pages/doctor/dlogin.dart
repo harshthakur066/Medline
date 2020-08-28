@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
+
 // import 'package:medline/patient/psignup.dart';
 import 'package:medline/pages/patient/psignup.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
+
 
 class DoctorLoginScreen extends StatefulWidget {
   @override
@@ -23,6 +25,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
         //height: phoneHeight,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
+
           child: Align(
             child: SingleChildScrollView(
               child: Column(
@@ -35,6 +38,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       color: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+
                     ),
                   ),
                   SizedBox(height: 10),
@@ -45,6 +49,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.transparent,
                     ),
+
                     child: Column(
                       children: <Widget>[
                         TextField(
@@ -79,14 +84,17 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                                 color: Colors.grey[400],
                               ),
                               borderRadius: BorderRadius.circular(50),
+
                             ),
                           ),
                         ),
                         SizedBox(height: 40),
                         MaterialButton(
                           onPressed: () {
+
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => DoctorHome()));
+
                           },
                           child: Text('LOGIN',
                               style:
