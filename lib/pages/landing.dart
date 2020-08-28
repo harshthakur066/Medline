@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medline/pages/login.dart';
-import 'package:medline/pages/signup.dart';
+import 'package:medline/pages/doctor/dlogin.dart';
+import 'package:medline/patient/plogin.dart';
+import 'package:medline/patient/psignup.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -32,9 +33,9 @@ class LandingPage extends StatelessWidget {
               SizedBox(height: 200),
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => PatientLoginScreen()));
                 },
-                child: Text('LOGIN',
+                child: Text('PATIENT',
                     style: TextStyle(color: Colors.black, fontSize: 18)),
                 height: 50,
                 minWidth: double.infinity,
@@ -46,9 +47,9 @@ class LandingPage extends StatelessWidget {
               SizedBox(height: 15),
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignupScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorLoginScreen()));
                 },
-                child: Text('REGISTER',
+                child: Text('DOCTOR',
                     style: TextStyle(color: Colors.black, fontSize: 18)),
                 height: 50,
                 minWidth: double.infinity,
