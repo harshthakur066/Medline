@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:medline/pages/doctor/dhome.dart';
+import 'package:medline/pages/doctor/dsignup.dart';
 import 'package:medline/patient/psignup.dart';
 
-class DoctorLoginScreen extends StatelessWidget {
+class DoctorLoginScreen extends StatefulWidget {
+  @override
+  _DoctorLoginScreenState createState() => _DoctorLoginScreenState();
+}
+
+class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
     var person = Icons.person;
+    var demail = '';
+    var dpassword = '';
     return Scaffold(
       body: Container(
         //height: phoneHeight,
@@ -35,6 +44,11 @@ class DoctorLoginScreen extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       //obscureText: obscureText,
+                       onChanged: (value) {
+                        setState(() {
+                          demail = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
                         // prefix: Icon(Icons.person, color: Colors.orange),
@@ -53,6 +67,11 @@ class DoctorLoginScreen extends StatelessWidget {
                     SizedBox(height: 20),
                     TextField(
                       //obscureText: obscureText,
+                       onChanged: (value) {
+                        setState(() {
+                          dpassword = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
                         // prefix: Icon(Icons.vpn_key, color: Colors.orange),
@@ -70,7 +89,7 @@ class DoctorLoginScreen extends StatelessWidget {
                     SizedBox(height: 40),
                     MaterialButton(
                       onPressed: () {
-                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorHome()));
                       },
                       child: Text('LOGIN',
                           style: TextStyle(color: Colors.black, fontSize: 18)),
@@ -84,7 +103,7 @@ class DoctorLoginScreen extends StatelessWidget {
                     SizedBox(height: 10),                   
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PatientSignupScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorSignupScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

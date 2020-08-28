@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:medline/patient/plogin.dart';
 
-class PatientSignupScreen extends StatelessWidget {
+class PatientSignupScreen extends StatefulWidget {
+  @override
+  _PatientSignupScreenState createState() => _PatientSignupScreenState();
+}
+
+class _PatientSignupScreenState extends State<PatientSignupScreen> {
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
     var person = Icons.person;
+    var pemail = '';
+    var ppassword = '';
+    var pname = '';
+    var pnumber = '';
+
     return Scaffold(
       body: Container(
         //height: phoneHeight,
@@ -35,6 +45,11 @@ class PatientSignupScreen extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       //obscureText: obscureText,
+                       onChanged: (value) {
+                        setState(() {
+                          pname = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
                         prefixIcon:
@@ -52,6 +67,12 @@ class PatientSignupScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     TextField(
                       //obscureText: obscureText,
+                      onChanged: (value) {
+                        setState(() {
+                          pnumber = value;
+                        });
+                      },
+                
                       decoration: InputDecoration(
                         hintText: 'Enter Mobile Number',
                         prefixIcon: Icon(Icons.phone, color: Color(0xFF08ffbd)),
@@ -68,6 +89,12 @@ class PatientSignupScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     TextField(
                       //obscureText: obscureText,
+                     onChanged: (value) {
+                       setState(() {
+                         pemail = value;
+                       });
+                     },
+                
                       decoration: InputDecoration(
                         hintText: 'Enter Email ID',
                         prefixIcon: Icon(Icons.email, color: Color(0xFF08ffbd)),
@@ -84,6 +111,11 @@ class PatientSignupScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     TextField(
                       //obscureText: obscureText,
+                      onChanged: (value) {
+                        setState(() {
+                          ppassword = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
                         prefixIcon:

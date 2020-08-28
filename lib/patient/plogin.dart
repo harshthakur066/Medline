@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:medline/patient/psignup.dart';
 
-class PatientLoginScreen extends StatelessWidget {
+class PatientLoginScreen extends StatefulWidget {
+  @override
+  _PatientLoginScreenState createState() => _PatientLoginScreenState();
+}
+
+class _PatientLoginScreenState extends State<PatientLoginScreen> {
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
     var person = Icons.person;
+    var pemail = '';
+    var ppassword = '';
     return Scaffold(
       body: Container(
         //height: phoneHeight,
@@ -35,6 +42,11 @@ class PatientLoginScreen extends StatelessWidget {
                   children: <Widget>[
                     TextField(
                       //obscureText: obscureText,
+                       onChanged: (value) {
+                        setState(() {
+                          pemail = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
                         // prefix: Icon(Icons.person, color: Colors.orange),
@@ -53,6 +65,11 @@ class PatientLoginScreen extends StatelessWidget {
                     SizedBox(height: 20),
                     TextField(
                       //obscureText: obscureText,
+                       onChanged: (value) {
+                        setState(() {
+                          ppassword = value;
+                        });
+                      },
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
                         // prefix: Icon(Icons.vpn_key, color: Colors.orange),
