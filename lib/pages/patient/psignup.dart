@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:medline/pages/chat_screen.dart';
 import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/plogin.dart';
 
@@ -11,25 +13,26 @@ class PatientSignupScreen extends StatefulWidget {
 }
 
 class _PatientSignupScreenState extends State<PatientSignupScreen> {
-  Future<void> psignup(email, password) async {
-    const url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
-    try {
-      await http.post(
-        url,
-        body: json.encode({
-          'email': email,
-          'password': password,
-          'returnSecureToken': true,
-        }),
-      );
-    } catch (err) {
-      print(err);
-    }
-  }
+  final _auth = FirebaseAuth.instance;
+  bool showSpinner = false;
+  String email, password;
+//  Future<void> psignup(email, password) async {
+//    const url =
+//        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+//    try {
+//      await http.post(
+//        url,
+//        body: json.encode({
+//          'email': email,
+//          'password': password,
+//          'returnSecureToken': true,
+//        }),
+//      );
+//    } catch (err) {
+//      print(err);
+//    }
+//  }
 
-  String pemail;
-  String ppassword;
   var person = Icons.person;
   String pname;
   String pnumber;
@@ -116,7 +119,7 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
-                              pemail = value;
+                              email = value;
                             });
                           },
 
@@ -140,7 +143,7 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                           onChanged: (value) {
                             setState(() {
                               print('value $value');
-                              ppassword = value;
+                              password = value;
                               print('pass $ppassword');
                             });
                           },
@@ -160,9 +163,20 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                         ),
                         SizedBox(height: 20),
                         MaterialButton(
-                          onPressed: () {
-                            print('$pemail and $ppassword');
-                            psignup(pemail, ppassword);
+                          onPressed: () async {
+//                            print('$pemail and $ppassword');
+//                            psignup(pemail, ppassword);
+                            try {
+                              final newUser =
+                                  await _auth.createUserWithEmailAndPassword(
+                                      email: email, password: password);
+                              if (newUser != null) {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ChatScreen()));
+                              }
+                            } catch (e) {
+                              print(e);
+                            }
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => HomePage()));
                           },

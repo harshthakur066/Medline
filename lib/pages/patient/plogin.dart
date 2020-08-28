@@ -1,7 +1,6 @@
-import 'dart:convert';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:medline/pages/chat_screen.dart';
 import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/psignup.dart';
 
@@ -11,26 +10,26 @@ class PatientLoginScreen extends StatefulWidget {
 }
 
 class _PatientLoginScreenState extends State<PatientLoginScreen> {
-  Future<void> plogin(email, password) async {
-    const url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
-    try {
-      await http.post(
-        url,
-        body: json.encode({
-          'email': email,
-          'password': password,
-          'returnSecureToken': true,
-        }),
-      );
-    } catch (err) {
-      print(err);
-    }
-  }
+  final _auth = FirebaseAuth.instance;
+  String email, password;
+//  Future<void> plogin(email, password) async {
+//    const url =
+//        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+//    try {
+//      await http.post(
+//        url,
+//        body: json.encode({
+//          'email': email,
+//          'password': password,
+//          'returnSecureToken': true,
+//        }),
+//      );
+//    } catch (err) {
+//      print(err);
+//    }
+//  }
 
   var person = Icons.person;
-  String pemail;
-  String ppassword;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +68,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
-                              pemail = value;
+                              email = value;
                             });
                           },
                           decoration: InputDecoration(
@@ -92,7 +91,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
-                              ppassword = value;
+                              password = value;
                             });
                           },
                           decoration: InputDecoration(
@@ -112,10 +111,21 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                         ),
                         SizedBox(height: 40),
                         MaterialButton(
-                          onPressed: () {
-                            plogin(pemail, ppassword);
+                          onPressed: () async {
+//                            plogin(pemail, ppassword);
+                            try {
+                              final user =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              if (user != null) {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ChatScreen()));
+                              }
+                            } catch (e) {
+                              print(e);
+                            }
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) => ChatScreen()));
                           },
                           child: Text('LOGIN',
                               style:
