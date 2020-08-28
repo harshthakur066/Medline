@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medline/patient/psignup.dart';
+import 'package:medline/pages/patient/psignup.dart';
 
 class PatientLoginScreen extends StatefulWidget {
   @override
