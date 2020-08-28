@@ -42,7 +42,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String email = 'nabhan710hanif@gmail.com';
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
@@ -70,7 +69,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       messageTextController.clear();
                       _fireStore.collection('messages').add({
                         'text': messageText,
-                        'sender': email,
+                        'sender': loggedInUser.email,
                       });
                     },
                     child: Text(
@@ -106,7 +105,7 @@ class MessageStream extends StatelessWidget {
         for (var message in messages) {
           final messageText = message.data['text'];
           final messageSender = message.data['sender'];
-          final currentUser = 'nabhan710hanif@gmail.com';
+          final currentUser = loggedInUser.email;
 
           final messageBubble = MessageBubble(
             text: messageText,
