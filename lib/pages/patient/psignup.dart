@@ -25,7 +25,6 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
         //height: phoneHeight,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
-
           child: Align(
             child: SingleChildScrollView(
               child: Column(
@@ -157,7 +156,6 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                 ],
               ),
             ),
-
           ),
         ),
       ),

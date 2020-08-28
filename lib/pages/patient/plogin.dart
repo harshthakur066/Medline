@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:medline/pages/patient/psignup.dart';
+
+import '../home.dart';
+import 'psignup.dart';
 
 class PatientLoginScreen extends StatefulWidget {
   @override
@@ -22,7 +24,6 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
         //height: phoneHeight,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
-
           child: Align(
             child: SingleChildScrollView(
               child: Column(

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
-import 'package:medline/pages/patient/psignup.dart';
 
+// import 'package:medline/patient/psignup.dart';
+import 'package:medline/pages/patient/psignup.dart';
+import 'package:medline/pages/doctor/dsignup.dart';
 
 
 class DoctorLoginScreen extends StatefulWidget {
@@ -36,6 +38,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       color: Colors.black,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+
                     ),
                   ),
                   SizedBox(height: 10),
@@ -46,6 +49,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.transparent,
                     ),
+
                     child: Column(
                       children: <Widget>[
                         TextField(
@@ -65,38 +69,21 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                             ),
                           ),
                         ),
-
-                      ),
-                    ),
-                    SizedBox(height: 40),
-                    MaterialButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorHome()));
-                      },
-                      child: Text('LOGIN',
-                          style: TextStyle(color: Colors.black, fontSize: 18)),
-                      height: 50,
-                      minWidth: double.infinity,
-                      color: Color(0xFF08ffbd),
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                    SizedBox(height: 10),                   
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorSignupScreen()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Don\'t have an account?'),
-                          SizedBox(width: 5),
-                          Text(
-                            'Sign Up!',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                        SizedBox(height: 20),
+                        TextField(
+                          //obscureText: obscureText,
+                          decoration: InputDecoration(
+                            hintText: 'Enter Password',
+                            // prefix: Icon(Icons.vpn_key, color: Colors.orange),
+                            prefixIcon:
+                                Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 10),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey[400],
+                              ),
+                              borderRadius: BorderRadius.circular(50),
 
                             ),
                           ),
@@ -104,7 +91,10 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                         SizedBox(height: 40),
                         MaterialButton(
                           onPressed: () {
-                            //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DoctorHome()));
+
                           },
                           child: Text('LOGIN',
                               style:
