@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medline/pages/chat_screen.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class Doctor extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class Doctor extends StatefulWidget {
 }
 
 class _DoctorState extends State<Doctor> {
+  Razorpay razorpay;
   bool datebutton1 = false;
   bool datebutton2 = false;
   bool datebutton3 = false;
@@ -19,6 +22,55 @@ class _DoctorState extends State<Doctor> {
   bool datebutton9 = false;
   bool datebutton10 = false;
   bool datebutton11 = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    razorpay = new Razorpay();
+
+    razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlerPaymentSuccess);
+    razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlerErrorFailure);
+    razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handlerExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    razorpay.clear();
+  }
+
+  void openCheckout() {
+    var options = {
+      "key": "rzp_test_bWKZ5iU9pYUE9i",
+      "amount": 500,
+      "name": "Medline",
+      "description": "Payment for the some random product",
+      "prefill": {"contact": "9896728762", "email": "nabhan710hanif@gmail.com"},
+      "external": {
+        "wallets": ["paytm"]
+      }
+    };
+
+    try {
+      razorpay.open(options);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  void handlerPaymentSuccess() {
+    print("Pament success");
+  }
+
+  void handlerErrorFailure() {
+    print("Pament error");
+  }
+
+  void handlerExternalWallet() {
+    print("External Wallet");
+  }
+
   @override
   Widget build(BuildContext context) {
     final _controller = PageController();
@@ -464,7 +516,11 @@ class _DoctorState extends State<Doctor> {
               ),
               SizedBox(height: 20),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  openCheckout();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ChatScreen()));
+                },
                 child: Text('Pay & Book Appointment',
                     style: TextStyle(fontSize: 18, color: Colors.black54)),
                 color: Color(0xff9dfff1),

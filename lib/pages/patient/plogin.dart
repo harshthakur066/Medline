@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:medline/pages/chat_screen.dart';
 import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/psignup.dart';
 
@@ -119,13 +118,13 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                                       email: email, password: password);
                               if (user != null) {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ChatScreen()));
+                                    builder: (context) => HomePage()));
                               }
                             } catch (e) {
                               print(e);
                             }
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ChatScreen()));
+//                            Navigator.of(context).push(MaterialPageRoute(
+//                                builder: (context) => ChatScreen()));
                           },
                           child: Text('LOGIN',
                               style:
