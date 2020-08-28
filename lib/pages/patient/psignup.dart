@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medline/patient/psignup.dart';
+import 'package:medline/pages/patient/plogin.dart';
 
-class PatientLoginScreen extends StatelessWidget {
+class PatientSignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
@@ -16,7 +16,7 @@ class PatientLoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Login',
+                'Sign Up',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
@@ -25,7 +25,7 @@ class PatientLoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text('Please enter your credentials'),
-              SizedBox(height: 40),
+              SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -37,8 +37,8 @@ class PatientLoginScreen extends StatelessWidget {
                       //obscureText: obscureText,
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
-                        // prefix: Icon(Icons.person, color: Colors.orange),
-                        prefixIcon: Icon(Icons.person, color:Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.person, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -49,14 +49,45 @@ class PatientLoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
+                    TextField(
+                      //obscureText: obscureText,
+                      decoration: InputDecoration(
+                        hintText: 'Enter Mobile Number',
+                        prefixIcon: Icon(Icons.phone, color: Color(0xFF08ffbd)),
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.grey[400],
+                          ),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    TextField(
+                      //obscureText: obscureText,
+                      decoration: InputDecoration(
+                        hintText: 'Enter Email ID',
+                        prefixIcon: Icon(Icons.email, color: Color(0xFF08ffbd)),
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.grey[400],
+                          ),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
                     TextField(
                       //obscureText: obscureText,
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
-                        // prefix: Icon(Icons.vpn_key, color: Colors.orange),
-                        prefixIcon: Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -67,12 +98,10 @@ class PatientLoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 20),
                     MaterialButton(
-                      onPressed: () {
-                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
-                      },
-                      child: Text('LOGIN',
+                      onPressed: () {},
+                      child: Text('SIGN UP',
                           style: TextStyle(color: Colors.black, fontSize: 18)),
                       height: 50,
                       minWidth: double.infinity,
@@ -82,51 +111,18 @@ class PatientLoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50)),
                     ),
                     SizedBox(height: 10),
-                    Text('or', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                    SizedBox(height: 10),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border(
-                          bottom: BorderSide(color: Color(0xFF08ffbd)),
-                          top: BorderSide(color: Color(0xFF08ffbd)),
-                          left: BorderSide(color: Color(0xFF08ffbd)),
-                          right: BorderSide(color: Color(0xFF08ffbd)),
-                        )
-                      ),
-                      child: MaterialButton(
-                        onPressed: () {
-                          //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset('asset/ui.png', height: 20),
-                            SizedBox(width: 15),
-                            Text('LOGIN WITH GOOGLE',
-                                style: TextStyle(color: Colors.black, fontSize: 18)),
-                          ],
-                        ),
-                        height: 50,
-                        minWidth: double.infinity,
-                        color: Colors.white,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50)),
-                      ),
-                    ),
-                    SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PatientSignupScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => PatientLoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Don\'t have an account?'),
+                          Text('Already Registered?'),
                           SizedBox(width: 5),
                           Text(
-                            'Sign Up!',
+                            'Login!',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
