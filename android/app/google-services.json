@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "799206659829",
+    "firebase_url": "https://medline-e1479.firebaseio.com",
+    "project_id": "medline-e1479",
+    "storage_bucket": "medline-e1479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799206659829:android:6fb2bc452bf9e5497ed7bc",
+        "android_client_info": {
+          "package_name": "com.geekbots.medline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799206659829-9bgeocm5hqjk7j6e15l36fhhinb7m37g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799206659829-9bgeocm5hqjk7j6e15l36fhhinb7m37g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
