@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
 import 'package:medline/patient/psignup.dart';
+=======
+import 'package:medline/pages/patient/psignup.dart';
+>>>>>>> master
 
 class DoctorLoginScreen extends StatefulWidget {
   @override
@@ -52,7 +56,8 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
                         // prefix: Icon(Icons.person, color: Colors.orange),
-                        prefixIcon: Icon(Icons.person, color:Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.person, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -63,7 +68,6 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                         ),
                       ),
                     ),
-                    
                     SizedBox(height: 20),
                     TextField(
                       //obscureText: obscureText,
@@ -75,7 +79,8 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
                         // prefix: Icon(Icons.vpn_key, color: Colors.orange),
-                        prefixIcon: Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -100,10 +105,13 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                     ),
-                    SizedBox(height: 10),                   
+                    SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => DoctorSignupScreen()));
+
+
+
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
