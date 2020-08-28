@@ -70,10 +70,33 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(height: 40),
                     MaterialButton(
                       onPressed: () {
-                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
+                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
                       },
                       child: Text('LOGIN',
-                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                          style: TextStyle(color: Colors.black, fontSize: 18)),
+                      height: 50,
+                      minWidth: double.infinity,
+                      color: Color(0xFF08ffbd),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                    ),
+                    SizedBox(height: 10),
+                    Text('or', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                    SizedBox(height: 10),
+                    MaterialButton(
+                      onPressed: () {
+                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('asset/ui.png', height: 20),
+                          SizedBox(width: 15),
+                          Text('LOGIN WITH GOOGLE',
+                              style: TextStyle(color: Colors.black, fontSize: 18)),
+                        ],
+                      ),
                       height: 50,
                       minWidth: double.infinity,
                       color: Color(0xFF08ffbd),

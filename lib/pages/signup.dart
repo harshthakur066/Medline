@@ -37,7 +37,8 @@ class SignupScreen extends StatelessWidget {
                       //obscureText: obscureText,
                       decoration: InputDecoration(
                         hintText: 'Enter Username',
-                        prefixIcon: Icon(Icons.person, color: Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.person, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -85,7 +86,8 @@ class SignupScreen extends StatelessWidget {
                       //obscureText: obscureText,
                       decoration: InputDecoration(
                         hintText: 'Enter Password',
-                        prefixIcon: Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.vpn_key, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(
@@ -96,11 +98,37 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 20),
                     MaterialButton(
                       onPressed: () {},
                       child: Text('SIGN UP',
-                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                          style: TextStyle(color: Colors.black, fontSize: 18)),
+                      height: 50,
+                      minWidth: double.infinity,
+                      color: Color(0xFF08ffbd),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                    ),
+                    SizedBox(height: 10),
+                    Text('or',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16)),
+                    SizedBox(height: 10),
+                    MaterialButton(
+                      onPressed: () {
+                        //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('asset/ui.png', height: 20),
+                          SizedBox(width: 15),
+                          Text('SIGN UP WITH GOOGLE',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18)),
+                        ],
+                      ),
                       height: 50,
                       minWidth: double.infinity,
                       color: Color(0xFF08ffbd),
@@ -111,7 +139,8 @@ class SignupScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) =>LoginScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
