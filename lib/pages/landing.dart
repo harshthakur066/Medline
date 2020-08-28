@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medline/pages/doctor/dlogin.dart';
 import 'package:medline/pages/patient/plogin.dart';
 
+import 'package:medline/pages/patient/psignup.dart';
+
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

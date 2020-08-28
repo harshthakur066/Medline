@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:medline/pages/patient/plogin.dart';
 
-class PatientSignupScreen extends StatelessWidget {
+
+class PatientSignupScreen extends StatefulWidget {
+  @override
+  _PatientSignupScreenState createState() => _PatientSignupScreenState();
+}
+
+class _PatientSignupScreenState extends State<PatientSignupScreen> {
+
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
     var person = Icons.person;
+
+    var pemail = '';
+    var ppassword = '';
+    var pname = '';
+    var pnumber = '';
+
+
     return Scaffold(
       body: Container(
         //height: phoneHeight,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
+
           child: Align(
             child: SingleChildScrollView(
               child: Column(
@@ -142,6 +157,7 @@ class PatientSignupScreen extends StatelessWidget {
                 ],
               ),
             ),
+
           ),
         ),
       ),
