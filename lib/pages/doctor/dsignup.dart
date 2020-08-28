@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medline/patient/plogin.dart';
+import 'package:medline/pages/patient/plogin.dart';
 
 class DoctorSignupScreen extends StatelessWidget {
   @override
@@ -86,7 +86,8 @@ class DoctorSignupScreen extends StatelessWidget {
                       //obscureText: obscureText,
                       decoration: InputDecoration(
                         hintText: 'Enter License Number',
-                        prefixIcon: Icon(Icons.verified_user, color: Color(0xFF08ffbd)),
+                        prefixIcon:
+                            Icon(Icons.verified_user, color: Color(0xFF08ffbd)),
                         contentPadding:
                             EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                         border: OutlineInputBorder(

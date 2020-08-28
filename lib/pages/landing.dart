@@ -18,18 +18,44 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: 20),
-              Column(
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Welcome',
+                    // Text(
+                    //   'Welcome',
+                    //   style: TextStyle(
+                    //     fontSize: 60,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // //SizedBox(height: 20),
+
+                    SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        'Medline',
                         style: TextStyle(
-                            fontSize: 75, fontWeight: FontWeight.bold)),
-                    //SizedBox(height: 20),
-                    Text('to your online medical consultation portal.',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18)),
-                  ]),
-              SizedBox(height: 200),
+                          color: Theme.of(context).accentColor,
+                          fontSize: 75,
+                          // fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Your online medical consultation portal.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               MaterialButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -59,6 +85,7 @@ class LandingPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
               ),
+              SizedBox(height: 100)
             ],
           ),
         ),
