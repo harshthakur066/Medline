@@ -1,10 +1,6 @@
-import 'dart:convert';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:medline/pages/chat_screen.dart';
-import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/plogin.dart';
 
 class PatientSignupScreen extends StatefulWidget {
@@ -144,7 +140,6 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                             setState(() {
                               print('value $value');
                               password = value;
-                              print('pass $ppassword');
                             });
                           },
                           decoration: InputDecoration(
@@ -177,8 +172,8 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                             } catch (e) {
                               print(e);
                             }
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomePage()));
+//                            Navigator.of(context).push(MaterialPageRoute(
+//                                builder: (context) => HomePage()));
                           },
                           child: Text('SIGN UP',
                               style:
