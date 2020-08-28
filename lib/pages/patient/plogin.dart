@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/psignup.dart';
 
@@ -8,12 +11,31 @@ class PatientLoginScreen extends StatefulWidget {
 }
 
 class _PatientLoginScreenState extends State<PatientLoginScreen> {
+  Future<void> plogin(email, password) async {
+    const url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+    try {
+      await http.post(
+        url,
+        body: json.encode({
+          'email': email,
+          'password': password,
+          'returnSecureToken': true,
+        }),
+      );
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  var person = Icons.person;
+  String pemail;
+  String ppassword;
+
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
-    var person = Icons.person;
-    var pemail = '';
-    var ppassword = '';
+
     return Scaffold(
       body: Container(
         //height: phoneHeight,
@@ -91,6 +113,7 @@ class _PatientLoginScreenState extends State<PatientLoginScreen> {
                         SizedBox(height: 40),
                         MaterialButton(
                           onPressed: () {
+                            plogin(pemail, ppassword);
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => HomePage()));
                           },

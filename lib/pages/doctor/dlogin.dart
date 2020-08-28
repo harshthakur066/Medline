@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
 
@@ -8,12 +11,30 @@ class DoctorLoginScreen extends StatefulWidget {
 }
 
 class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
+  Future<void> dlogin(email, password) async {
+    const url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+    try {
+      await http.post(
+        url,
+        body: json.encode({
+          'email': email,
+          'password': password,
+          'returnSecureToken': true,
+        }),
+      );
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  String demail;
+  String dpassword;
+  var person = Icons.person;
+
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
-    var person = Icons.person;
-    var demail = '';
-    var dpassword = '';
     return Scaffold(
       body: Container(
         //height: phoneHeight,
@@ -91,6 +112,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                         SizedBox(height: 40),
                         MaterialButton(
                           onPressed: () {
+                            dlogin(demail, dpassword);
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => DoctorHome()));
                           },

@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:medline/pages/home.dart';
 import 'package:medline/pages/patient/plogin.dart';
 
 class PatientSignupScreen extends StatefulWidget {
@@ -7,14 +11,32 @@ class PatientSignupScreen extends StatefulWidget {
 }
 
 class _PatientSignupScreenState extends State<PatientSignupScreen> {
+  Future<void> psignup(email, password) async {
+    const url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+    try {
+      await http.post(
+        url,
+        body: json.encode({
+          'email': email,
+          'password': password,
+          'returnSecureToken': true,
+        }),
+      );
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  String pemail;
+  String ppassword;
+  var person = Icons.person;
+  String pname;
+  String pnumber;
+
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
-    var person = Icons.person;
-    var pemail = '';
-    var ppassword = '';
-    var pname = '';
-    var pnumber = '';
 
     return Scaffold(
       body: Container(
@@ -117,7 +139,9 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
+                              print('value $value');
                               ppassword = value;
+                              print('pass $ppassword');
                             });
                           },
                           decoration: InputDecoration(
@@ -136,7 +160,12 @@ class _PatientSignupScreenState extends State<PatientSignupScreen> {
                         ),
                         SizedBox(height: 20),
                         MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            print('$pemail and $ppassword');
+                            psignup(pemail, ppassword);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                          },
                           child: Text('SIGN UP',
                               style:
                                   TextStyle(color: Colors.black, fontSize: 18)),
