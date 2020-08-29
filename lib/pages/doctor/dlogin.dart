@@ -1,7 +1,5 @@
-import 'dart:convert';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dsignup.dart';
 
@@ -11,22 +9,24 @@ class DoctorLoginScreen extends StatefulWidget {
 }
 
 class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
-  Future<void> dlogin(email, password) async {
-    const url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
-    try {
-      await http.post(
-        url,
-        body: json.encode({
-          'email': email,
-          'password': password,
-          'returnSecureToken': true,
-        }),
-      );
-    } catch (err) {
-      print(err);
-    }
-  }
+  final _auth = FirebaseAuth.instance;
+  String email, password;
+//  Future<void> dlogin(email, password) async {
+//    const url =
+//        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBc4t_OuOyX8DMDi_EEhVq5_4PGhQuS1dM';
+//    try {
+//      await http.post(
+//        url,
+//        body: json.encode({
+//          'email': email,
+//          'password': password,
+//          'returnSecureToken': true,
+//        }),
+//      );
+//    } catch (err) {
+//      print(err);
+//    }
+//  }
 
   String demail;
   String dpassword;
@@ -68,7 +68,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
-                              demail = value;
+                              email = value;
                             });
                           },
                           decoration: InputDecoration(
@@ -91,7 +91,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                           //obscureText: obscureText,
                           onChanged: (value) {
                             setState(() {
-                              dpassword = value;
+                              password = value;
                             });
                           },
                           decoration: InputDecoration(
@@ -111,10 +111,19 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                         ),
                         SizedBox(height: 40),
                         MaterialButton(
-                          onPressed: () {
-                            dlogin(demail, dpassword);
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => DoctorHome()));
+                          onPressed: () async {
+//                            dlogin(demail, dpassword);
+                            try {
+                              final user =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              if (user != null) {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DoctorHome()));
+                              }
+                            } catch (e) {
+                              print(e);
+                            }
                           },
                           child: Text('LOGIN',
                               style:

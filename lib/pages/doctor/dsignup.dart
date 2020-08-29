@@ -1,6 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medline/pages/doctor/dhome.dart';
 import 'package:medline/pages/doctor/dlogin.dart';
-import 'package:medline/pages/patient/plogin.dart';
 
 class DoctorSignupScreen extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class DoctorSignupScreen extends StatefulWidget {
 }
 
 class _DoctorSignupScreenState extends State<DoctorSignupScreen> {
+  final _auth = FirebaseAuth.instance;
+  String email, password;
   @override
   Widget build(BuildContext context) {
     final phoneHeight = MediaQuery.of(context).size.height;
@@ -86,9 +89,18 @@ class _DoctorSignupScreenState extends State<DoctorSignupScreen> {
                     ),
                     SizedBox(height: 20),
                     MaterialButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DoctorSignupScreen2()));
+                      onPressed: () async {
+                        try {
+                          final newUser =
+                              await _auth.createUserWithEmailAndPassword(
+                                  email: email, password: password);
+                          if (newUser != null) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DoctorSignupScreen2()));
+                          }
+                        } catch (e) {
+                          print(e);
+                        }
                       },
                       child: Text('NEXT',
                           style: TextStyle(color: Colors.black, fontSize: 18)),
@@ -351,7 +363,12 @@ class _DoctorSignupScreen2State extends State<DoctorSignupScreen2> {
                     ),
                     SizedBox(height: 20),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DoctorHome()));
+                      },
                       child: Text('SIGN UP',
                           style: TextStyle(color: Colors.black, fontSize: 18)),
                       height: 50,

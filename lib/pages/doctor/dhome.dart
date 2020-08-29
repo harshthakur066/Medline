@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medline/pages/doctor/dlogin.dart';
+import 'package:medline/pages/chat_screen.dart';
 import 'package:medline/pages/landing.dart';
 
 class DoctorHome extends StatefulWidget {
@@ -84,7 +84,8 @@ class _DoctorHomeState extends State<DoctorHome> {
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
                   print('Card tapped.');
-                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ChatScreen()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
