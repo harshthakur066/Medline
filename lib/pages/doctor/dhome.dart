@@ -27,7 +27,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                 children: <Widget>[
                   Icon(Icons.account_circle, size: 60),
                   SizedBox(width: 10),
-                  Text('Patient\'s name', style: TextStyle(fontSize: 18)),
+                  Text('Harsh', style: TextStyle(fontSize: 18)),
                 ],
               ),
               decoration: BoxDecoration(
@@ -104,7 +104,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Harsh',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -160,7 +160,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Nabhan',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -178,7 +178,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('2:00 PM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -216,7 +216,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Hassan',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -234,7 +234,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('1:00 PM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -272,7 +272,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Sam',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -290,7 +290,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('11:00 AM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -328,7 +328,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Bob',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -346,7 +346,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('11:30 AM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -384,7 +384,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Jhon',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -402,7 +402,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('4:00 PM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -440,7 +440,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Maggie',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -458,7 +458,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('6:00 PM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -496,7 +496,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Patient\'s name',
+                            Text('Jesse',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
@@ -514,7 +514,7 @@ class _DoctorHomeState extends State<DoctorHome> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
-                                    child: Text('12:00 PM',
+                                    child: Text('3:00 PM',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ),

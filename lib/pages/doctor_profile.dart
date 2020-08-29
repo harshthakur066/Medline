@@ -43,7 +43,7 @@ class _DoctorState extends State<Doctor> {
   void openCheckout() {
     var options = {
       "key": "rzp_test_bWKZ5iU9pYUE9i",
-      "amount": 500*100,
+      "amount": 500 * 100,
       "name": "Medline",
       "description": "Payment for the some random product",
       "prefill": {"contact": "9896728762", "email": "nabhan710hanif@gmail.com"},
@@ -100,11 +100,11 @@ class _DoctorState extends State<Doctor> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text('Doctor\'s Name',
+                        Text('Rick',
                             style: TextStyle(
                                 fontSize: 25, fontWeight: FontWeight.bold)),
                         SizedBox(height: 5),
-                        Text('Speciality', style: TextStyle(fontSize: 16)),
+                        Text('Covid', style: TextStyle(fontSize: 16)),
                         SizedBox(height: 5),
                         Text('MBBS, MS'),
                       ]),

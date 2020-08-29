@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             children: [
               // ListTile(
-              //   title: Text('Doctor\'s Name'),
+              //   title: Text('Rick'),
               //   leading: Container(
               //       width: 50.0,
               //       height: 50.0,
@@ -92,26 +92,26 @@ class _HomePageState extends State<HomePage> {
               //             fit: BoxFit.fill,
               //             image: new AssetImage('asset/doctor.jpg'),
               //           ))),
-              //   subtitle: Text('Specialization'),
+              //   subtitle: Text('Covid'),
               //   onTap: () {
               //     Navigator.push(context,
               //         MaterialPageRoute(builder: (context) => Doctor()));
               //   },
               // ),
               // ListTile(
-              //   title: Text('Doctor\'s Name'),
+              //   title: Text('Rick'),
               //   leading: CircleAvatar(),
-              //   subtitle: Text('Specialization'),
+              //   subtitle: Text('Covid'),
               // ),
               // ListTile(
-              //   title: Text('Doctor\'s Name'),
+              //   title: Text('Rick'),
               //   leading: CircleAvatar(),
-              //   subtitle: Text('Specialization'),
+              //   subtitle: Text('Covid'),
               // ),
               // ListTile(
-              //   title: Text('Doctor\'s Name'),
+              //   title: Text('Rick'),
               //   leading: CircleAvatar(),
-              //   subtitle: Text('Specialization'),
+              //   subtitle: Text('Covid'),
               // ),
               InkWell(
                 splashColor: Colors.blue.withAlpha(30),
@@ -145,11 +145,11 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Doctor\'s name',
+                            Text('Rick',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
-                            Text('Specialization',
+                            Text('Covid',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 16)),
                             SizedBox(height: 3),
@@ -195,11 +195,11 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Doctor\'s name',
+                            Text('Harsh Thakur',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
-                            Text('Specialization',
+                            Text('General Medicine',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 16)),
                             SizedBox(height: 3),
@@ -245,11 +245,11 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Doctor\'s name',
+                            Text('Patrick',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
-                            Text('Specialization',
+                            Text('Psychiatrist',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 16)),
                             SizedBox(height: 3),
@@ -295,11 +295,11 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Doctor\'s name',
+                            Text('Margo',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
-                            Text('Specialization',
+                            Text('Mental Issues',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 16)),
                             SizedBox(height: 3),
@@ -345,11 +345,11 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('Doctor\'s name',
+                            Text('James',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20)),
                             SizedBox(height: 5),
-                            Text('Specialization',
+                            Text('Covid',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 16)),
                             SizedBox(height: 3),
