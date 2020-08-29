@@ -4,7 +4,6 @@ import 'package:medline/pages/patient/plogin.dart';
 
 import 'package:medline/pages/patient/psignup.dart';
 
-
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,49 +16,33 @@ class LandingPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(40.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 20),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    // Text(
-                    //   'Welcome',
-                    //   style: TextStyle(
-                    //     fontSize: 60,
-                    //     fontWeight: FontWeight.bold,
-                    //   ),
-                    // ),
-                    // //SizedBox(height: 20),
-
-                    SizedBox(height: 20),
-                    Container(
-                      width: double.infinity,
-                      child: Text(
-                        'Medline',
-                        style: TextStyle(
-                          color: Theme.of(context).accentColor,
-                          fontSize: 75,
-                          // fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.italic,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Your online medical consultation portal.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
+              //SizedBox(height: 20),
+              Column(children: <Widget>[
+                Text(
+                'Medline',
+                style: TextStyle(
+                  color: Theme.of(context).accentColor,
+                  fontSize: 75,
+                  // fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
                 ),
+                textAlign: TextAlign.center,
               ),
-              MaterialButton(
+              SizedBox(height: 15),
+              Text(
+                'Your online medical consultation portal.',
+                style: TextStyle(
+                  //fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              ],),
+              Column(children: <Widget>[
+                MaterialButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => PatientLoginScreen()));
@@ -88,7 +71,8 @@ class LandingPage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50)),
               ),
-              SizedBox(height: 100)
+              ]),
+              
             ],
           ),
         ),

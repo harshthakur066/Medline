@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medline/pages/doctor/dlogin.dart';
+import 'package:medline/pages/landing.dart';
 
 class DoctorHome extends StatefulWidget {
   @override
@@ -10,11 +11,72 @@ class _DoctorHomeState extends State<DoctorHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Your Appointments')),
+      appBar: AppBar(
+        title: Text('Your Appointments', style: TextStyle(color: Colors.black)),
+        backgroundColor: Color(0xfff5f5f5),
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Icon(Icons.account_circle, size: 60),
+                  SizedBox(width: 10),
+                  Text('Patient\'s name', style: TextStyle(fontSize: 18)),
+                ],
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFF08ffbd),
+              ),
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.description),
+                      SizedBox(width: 10),
+                      Text('App Description', style: TextStyle(fontSize: 18)),
+                    ],
+                  ),
+                  Icon(Icons.keyboard_arrow_right),
+                ],
+              ),
+              onTap: (){
+                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ));
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.logout),
+                      SizedBox(width: 10),
+                      Text('Logout', style: TextStyle(fontSize: 18)),
+                    ],
+                  ),
+                  Icon(Icons.keyboard_arrow_right),
+                ],
+              ),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
+              },
+            ),
+          ],
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xfff5f5f5)),
         child: Padding(
-          padding: EdgeInsets.only(top:15, left: 15, right: 15),
+          padding: EdgeInsets.only(top: 15, left: 15, right: 15),
           child: ListView(
             children: <Widget>[
               InkWell(
