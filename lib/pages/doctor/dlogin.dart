@@ -47,7 +47,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Login',
+                    'Hey Doc!',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -55,7 +55,7 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Text('Please enter your credentials'),
+                  Text('Please enter your credentials.'),
                   SizedBox(height: 40),
                   Container(
                     decoration: BoxDecoration(
