@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                   Icon(Icons.keyboard_arrow_right),
                 ],
               ),
-              onTap: (){
+              onTap: () {
                 //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ));
               },
             ),
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(Icons.logout),
+                      Icon(Icons.exit_to_app),
                       SizedBox(width: 10),
                       Text('Logout', style: TextStyle(fontSize: 18)),
                     ],
@@ -67,8 +67,9 @@ class _HomePageState extends State<HomePage> {
                   Icon(Icons.keyboard_arrow_right),
                 ],
               ),
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LandingPage()));
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => LandingPage()));
               },
             ),
           ],
