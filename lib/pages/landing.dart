@@ -20,59 +20,60 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               //SizedBox(height: 20),
-              Column(children: <Widget>[
-                Text(
-                'Medline',
-                style: TextStyle(
-                  color: Theme.of(context).accentColor,
-                  fontSize: 75,
-                  // fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                ),
-                textAlign: TextAlign.center,
+              Column(
+                children: <Widget>[
+                  Text(
+                    'Medline',
+                    style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                      fontSize: 65,
+                      // fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    'Your online medical consultation portal.',
+                    style: TextStyle(
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              SizedBox(height: 15),
-              Text(
-                'Your online medical consultation portal.',
-                style: TextStyle(
-                  //fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              ],),
               Column(children: <Widget>[
                 MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PatientLoginScreen()));
-                },
-                child: Text('PATIENT',
-                    style: TextStyle(color: Colors.black, fontSize: 18)),
-                height: 50,
-                minWidth: double.infinity,
-                color: Color(0xFF08ffbd),
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-              ),
-              SizedBox(height: 15),
-              MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DoctorLoginScreen()));
-                },
-                child: Text('DOCTOR',
-                    style: TextStyle(color: Colors.black, fontSize: 18)),
-                height: 50,
-                minWidth: double.infinity,
-                color: Color(0xFF08ffbd),
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-              ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PatientLoginScreen()));
+                  },
+                  child: Text('PATIENT',
+                      style: TextStyle(color: Colors.black, fontSize: 18)),
+                  height: 50,
+                  minWidth: double.infinity,
+                  color: Color(0xFF08ffbd),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                ),
+                SizedBox(height: 15),
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => DoctorLoginScreen()));
+                  },
+                  child: Text('DOCTOR',
+                      style: TextStyle(color: Colors.black, fontSize: 18)),
+                  height: 50,
+                  minWidth: double.infinity,
+                  color: Color(0xFF08ffbd),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                ),
               ]),
-              
             ],
           ),
         ),
