@@ -43,7 +43,7 @@ class _DoctorState extends State<Doctor> {
   void openCheckout() {
     var options = {
       "key": "rzp_test_bWKZ5iU9pYUE9i",
-      "amount": 500,
+      "amount": 500*100,
       "name": "Medline",
       "description": "Payment for the some random product",
       "prefill": {"contact": "9896728762", "email": "nabhan710hanif@gmail.com"},

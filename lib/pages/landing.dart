@@ -4,7 +4,6 @@ import 'package:medline/pages/patient/plogin.dart';
 
 import 'package:medline/pages/patient/psignup.dart';
 
-
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class LandingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 20),
+              SizedBox(height: 60),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,11 +48,15 @@ class LandingPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Text(
-                      'Your online medical consultation portal.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        'Your online medical consultation portal.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ],
